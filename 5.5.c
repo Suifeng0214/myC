@@ -37,6 +37,5 @@ main()
     }
     printf("%d\n",ax);
     printf("%d\n",ay);
-
 }
 
