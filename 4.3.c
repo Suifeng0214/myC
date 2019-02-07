@@ -12,10 +12,10 @@ main()
 
     x = (a2x-a1x)*(a2y-a1y);
     if (x>0){
-    printf("%d",x);
+        printf("%d",x);
     }
     else{
-    x = -x;
-    printf("%d",x);
+        x = -x;
+        printf("%d",x);
     }
 }

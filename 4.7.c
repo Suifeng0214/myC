@@ -7,7 +7,7 @@ main()
 
     if (a>b){
         j=a-b;
-        }
+    }
     else{
         j=b-a;
     }
