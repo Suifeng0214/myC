@@ -10,6 +10,9 @@ main()
 
     for (i=1;i<0;i++){
         day++;
+        if (year == year2 && month == month2 && day == day2){
+            printf("%d",tempday);
+        }
         switch (month){
             case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                 if (day == 30){
@@ -41,7 +44,4 @@ main()
                 month = 0;
         }
     }
-        if (year == year2 && month == month2 && day == day2){
-            printf("%d",tempday);
-        }
 }
