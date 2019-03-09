@@ -3,30 +3,29 @@ main()
 {
     int formin, formout, forminX = 1;
     int digits,tenthdg;
-    int digit[digits];
     int temp, i;
-
     scanf("%d",&formin);
     scanf("%d",&digits);
+    int digit[digits];
+    int temp2[digits];
+
     for (i=0;i<digits;i++){
         scanf("%d",&digit[i]);
     }
     scanf("%d",&formout);
 
-    temp = formin;
-    for (i=0;i<digits;i++)(
-        temp = formin;
-        temp *=
-    )
+    for (i=0;i<digits-2;i++){
+        temp *= formin;
+    }
 
-    for (i=0;i<digits;i++)(
-    tenthdg +=  digit[i]*formin[j]
-    )
+    temp2[0] = temp;
+    for (i=0;i<digits;i++){
+        temp2[i+1] = temp2[i]/formin;
+    }
 
-
-
-
-
+    for (i=0;i<digits;i++){
+    tenthdg +=  digit[i]*temp2[i];
+    }
 
 
     if (formin == formout){
@@ -63,4 +62,5 @@ main()
         break;
         }
     }
+    printf("%d\n",tenthdg);
 }
