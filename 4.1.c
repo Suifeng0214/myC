@@ -2,20 +2,20 @@
 main()
 {
     int a, b, c, temp;
-    scanf("%d\n",&a);
-    scanf("%d\n",&b);
-    scanf("%d",&c);
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
 
-    if (a>b){
+    if (a > b){
     temp = b;
     }
-    else if (a<b){
+    else if (a < b){
     temp = a;
     }
-    if (temp>c){
-    printf("%d\n",c);
+    if (temp > c){
+    printf("%d\n", c);
     }
     else{
-    printf("%d\n",temp);
+    printf("%d\n", temp);
     }
 }
