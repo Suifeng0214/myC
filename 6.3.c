@@ -10,7 +10,7 @@ main()
     }
     
     for (j = 0; j < lengh; j++){
-    	if (abs(numbers[j]) % 2 == 1){
+    	if (abs(numbers[j]) % 2){
     		printf("%d ", numbers[j]);
     	}
     }
@@ -18,7 +18,7 @@ main()
     printf("\n");
     
     for (j = 0; j < lengh; j++){
-    	if (abs(numbers[j])% 2 == 0){
+    	if (abs(numbers[j]) % 2 == 0){
     		printf("%d ", numbers[j]);
     	}
     }
