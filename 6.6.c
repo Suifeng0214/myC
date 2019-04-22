@@ -1,37 +1,61 @@
 #include <stdio.h>
 main()
 {
-    int i, j, k, l, lengh;
-    scanf("%d%d", &i, &j);
-    int num[i][j];
-    for (k = 0; k < i; k++){
-		for (l = 0; l < j; l++){
-			scanf("%d",&num[k][l]);
+    int i, j, k, l, column, row;
+    scanf("%d%d", &column, &row);
+    int box[column][row];
+    
+    for (i = 0; i < column; i++){
+		for (j = 0; j < row; j++){
+			scanf("%d",&box[i][j]);
     	}
     }
     
 	printf("\n");
 
-    for (k = 0; k < i; k++){
-		for (l = 0; l < j; l++){
-			if ((k == 0) && (num[k][l] > num[k+1][l])){
-				if ((l == 0) && (num[k][l] > num[k][l+1])){
-					printf("%d\n",num[k][l]);
-				}
-				if ((l == j-1) && (num[k][l] > num[k][l-1])){
-					printf("%d\n",num[k][l]);
-				}
-				if ((l != 0) && (l != (j-1))){
-					if ((num[k][l] > num[k][l-1]) && (num[k][l] > num[k][l+1])){
-						printf("%d\n",num[k][l]);
-					}
-				}
+    for (i = 0; i < column; i++){
+		for (j = 0; j < row; j++){
+			//top:
+			if (i == 0
+			 && j == 0
+			 && box[i][j] > box[i+1][j]
+			 && box[i][j] > box[i][j+1]){
+			 	printf("%d\n", box[i][j]);	
 			}
-			if ((num[k][l] > num[k+1][l])
-			&& (num[k][l] > num[k-1][l])
-			&& (num[k][l] > num[k][l-1])
-			&& (num[k][l] > num[k][l+1])){
-		    	printf("%d\n",num[k][l]);
+			if (i == 0
+			 && j == row - 1
+			 && box[i][j] > box[i+1][j]
+			 && box[i][j] > box[i][j-1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			if (i == 0
+			 && j != row - 1
+			 && j != 0
+			 && box[i][j] > box[i+1][j]
+			 && box[i][j] > box[i][j+1]
+			 && box[i][j] > box[i][j-1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			//bot:
+			if (i == column - 1
+			 && j == 0
+			 && box[i][j] > box[i-1][j]
+			 && box[i][j] > box[i][j+1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			if (i == column - 1
+			 && j == row - 1
+			 && box[i][j] > box[i-1][j]
+			 && box[i][j] > box[i][j-1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			if (i == column - 1                        
+			 && j != row - 1
+			 && j != 0
+			 && box[i][j] > box[i-1][j]
+			 && box[i][j] > box[i][j+1]
+			 && box[i][j] > box[i][j-1]){
+			 	printf("%d\n", box[i][j]);	
 			}
     	}
     }
