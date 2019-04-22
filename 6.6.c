@@ -1,13 +1,13 @@
 #include <stdio.h>
 main()
 {
-    int i, j, k, l, column, row;
+    int i, j, column, row;
     scanf("%d%d", &column, &row);
     int box[column][row];
     
     for (i = 0; i < column; i++){
 		for (j = 0; j < row; j++){
-			scanf("%d",&box[i][j]);
+			scanf("%d", &box[i][j]);
     	}
     }
     
@@ -52,6 +52,33 @@ main()
 			if (i == column - 1                        
 			 && j != row - 1
 			 && j != 0
+			 && box[i][j] > box[i-1][j]
+			 && box[i][j] > box[i][j+1]
+			 && box[i][j] > box[i][j-1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			//left
+			if (i != 0 
+			 && i != column -1
+			 && j == 0
+			 && box[i][j] > box[i+1][j]
+			 && box[i][j] > box[i-1][j]
+			 && box[i][j] > box[i][j+1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			//right
+			if (i != 0
+			 && i != column -1
+			 && j == row - 1
+			 && box[i][j] > box[i+1][j]
+			 && box[i][j] > box[i-1][j]
+			 && box[i][j] > box[i][j-1]){
+			 	printf("%d\n", box[i][j]);	
+			}
+			//mid
+			if (0 < i && i < column - 1
+			 && 0 < j && j < row - 1 
+			 && box[i][j] > box[i+1][j]
 			 && box[i][j] > box[i-1][j]
 			 && box[i][j] > box[i][j+1]
 			 && box[i][j] > box[i][j-1]){
